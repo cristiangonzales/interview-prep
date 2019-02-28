@@ -1,0 +1,136 @@
+% Author: Cristian Gonzales
+%%%%%%%%%%%%%%
+
+\documentclass{res}
+
+\usepackage[margin=0.1in, right=30mm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{fontawesome}
+\usepackage{multicol}
+
+% Magic that makes errors form collusion of resume class and header/footer:
+% https://tex.stackexchange.com/questions/105586/footer-not-appearing-on-resume
+\textheight=10in
+\footskip=25pt
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyfoot[C]{} % other info in "inner" position of footer line
+\pagestyle{fancy}
+
+\begin{document}
+\begin{resume}
+
+% Header
+\begin{center}
+\textsc{{\Huge Cristian Gonzales}}\\
+\vspace{1mm}
+\textsc{\large Incoming Software Engineer I at Northrop Grumman}\\
+\vspace{1mm}
+\end{center}
+
+% Links
+\begin{multicols}{4}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\faLinkedinSquare\ 
+\textit{https://bit.ly/eey7W}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\columnbreak
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\faGithub\ 
+\textit{https://bit.ly/2McyUX}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\columnbreak
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\faGlobe\ 
+\textit{https://bit.ly/2vA649}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\columnbreak
+%%%%%%%%%%%%%%%%%%%%%%%%
+\faEnvelope\ 
+\textit{xcristian.gonzales@gmail.com}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\end{multicols}
+
+\vspace{-3mm}
+
+% Education
+\textsc{{\Large Education}}
+\vspace{0.5mm}
+\hrule width18.5cm
+%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{University of California, Santa Cruz}\\
+\textit{Computer Science, B.S.}
+\hfill
+Expected Graduation: June 2019\\
+\vspace{-4mm}
+
+% Experience
+\textsc{{\Large Experience}}
+\vspace{0.5mm}
+\hrule width18.5cm
+%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Northrop Grumman}\\
+\textit{Technical Intern}
+\hfill
+June 2017 -- August 2017\\[1mm]
+	\begin{itemize}
+		\vspace{-3mm}
+		\item Interfaced with NASA's GMSEC API to build a proof-of-concept visualization tool which tracked health statuses of satellites. This inspired a new feature in another Northrop Grumman product.
+		\item Ported ephemeris data, via web sockets, across multiple Northrop Grumman domains/applications.
+		\item Implemented basic dependency injections, using the Google Guice framework, across the codebase.
+	\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Projects
+\textsc{{\Large Projects}}
+\vspace{0.5mm}
+\hrule width18.5cm
+%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Fault Tolerant and Scalable Key-Value Store (KVS)}\\
+\textit{A scalable Docker cluster of nodes that is fault tolerant and eventually consistent.}
+	\vspace{2mm}
+	\begin{itemize}
+		\item Nodes were designed using a RESTful API interface (Python Flask), so clients may use the KVS and add nodes.
+		\item Favors availability over strong consistency, per CAP theorem, so eventual consistency is guaranteed in light of network partitions, with a property of bounded staleness for stale data after network partitions are healed.
+		\item After a network is healed, nodes with different values of the same key are resolved by causal order (if they are causally concurrent, ties are resolved using local time stamps on replica nodes).
+		\item Uses consistent hashing to dynamically and uniformly distribute unique keys across all nodes in the network.
+	\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{SwiftySuncalc}\\
+\textit{A Swift micro-library for finding sun and moon positions/phases.}
+	\vspace{2mm}
+	\begin{itemize}
+		\item A direct Swift port of the original suncalc.js microlibrary, created and maintained by Vladimir Agafonkin on GitHub.
+		\item Used to calculate sun position, sunlight phases (times for sunrise, sunset, dusk, etc.), moon position and lunar phase for the given location and time.
+	\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Amazon Discounts Finder}\\
+\textit{Command line interface (CLI) tool to find heavily discounted items on the Amazon marketplace.}
+	\vspace{2mm}
+	\begin{itemize}
+		\item Used Python bindings for the Selenium WebDriver and the Beautiful Soup library to scrape for discounted Amazon items from \textit{https://camelcamelcamel.com/}, an Amazon price tracker.
+		\item After finding items, a Python client for the Amazon Simple Product API was used to place items in the user's Amazon cart.
+	\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Skills section
+\textsc{{\Large Skills}}
+\vspace{0.5mm}
+\hrule width18.5cm
+	\textsc{Languages:} C, Java, Python, SQL\\[2mm]
+	\textsc{Other Languages:} CSS, HTML, JavaScript, Shell scripting, Swift\\[2mm]
+	\textsc{Tools:} Android Studio, Docker, Eclipse, Git, \LaTeX, PostgresSQL, PyCharm, Xcode\\[2mm]
+	\textsc{Concepts:} Agile Development (Scrum framework), Code Coverage, Continuous Integration, Dependency Injections, Distributed Systems, RESTful APIs\\[0.5mm]
+\vspace{-1mm}
+
+\end{resume}
+\lfoot{\textit{References available upon request.}}
+\end{document}
