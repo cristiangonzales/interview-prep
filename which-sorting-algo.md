@@ -17,7 +17,7 @@ Recommendations:
 
 * **Bubble sort, selection sort:** When you're doing something quick and dirty and for some reason you can't just use the standard library's sorting algorithm. The only advantage these have over insertion sort is being slightly easier to implement.
 
-=====
+---
 
 * **Non-comparison sorts:** Under some fairly limited conditions it's possible to break the O(N log N) barrier and sort in O(N). Here are some cases where that's worth a try:
 
