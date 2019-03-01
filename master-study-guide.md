@@ -33,6 +33,22 @@ Questions to ask the interviewer
 Tools
 ---
 ### Docker
+##### What is Docker?
+* Containerization platform which packages an app and its dependencies in a container so the app works in any environment
+* Docker containers wrap software (the app) in a complete filesystem that contains everything needed to run (e.g. runtime, system tools, system libraries, anything that can be installed on a server)
+* Thus, software will run the same regardless of the environment
+* VMs have their own OS, while Docker uses the host OS
+
+##### What is a Docker image?
+* Used to create containers are created with the `docker build` command, and will produce a container with the `docker run` command
+* Images are stored in the Docker registry because they can become large
+* Images are composed of *layers* of other images so not a lot of data is sent over the network
+
+##### What is a Docker container?
+* Docker containers include the application and dependencies but share the host kernel with other containers, running as isolated processes in the user space on the host OS
+* Docker containers are not tied to any specific infrastructure, and hence, they can be ran anywhere
+* Created by running a build Docker image or using a Docker Hub image (containers are basically runtime instances of Docker images)
+
 ### Git
 * Git is a distributed VCS that allows you to track changes and revert to previous changes
 * Does not rely on central server to store all versions
