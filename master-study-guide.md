@@ -216,3 +216,24 @@ Languages (similarities and differences)
   * Uses Automatic Reference Counting (ARC) to manage memory
     * Creating a *strong reference cycle* can create memory leaks (up to the programmer to manage this with weak references)
   * Uses: iOS, macOS, Linux, Cocoa and Cocoa Touch frameworks (to write code for Apple products)
+
+Language Agnostic
+---
+### REST fundamentals
+* *Definition of REST*: Architectural style for designing loosely coupled applications over HTTP
+* Guiding Principles of REST––What makes a service *RESTful*?
+1. Client-server
+  * Improve UI portability across platforms and server scalability
+2. Stateless
+  * Session state kept entirely by the client, not dependent on the server
+3. Cacheable
+  * Responses must be labeled as cacheable or noncacheable (if cacheable, cached information can be used in subsequent events)
+4. Uniform interface
+  * Identification of resources
+  * Manipulation of resources through representations
+  * Self-descriptive messages
+  * Hypermedia as the engine of application state (HATEOAS)
+5. Layered system
+  * Each component cannot "see" beyond the immediate layer they are interacting with
+6. Code on demand
+  * Download/execute code in the form of applet/scripts
