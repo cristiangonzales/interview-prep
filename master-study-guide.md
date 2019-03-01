@@ -1,6 +1,6 @@
 Interview Questions
 ---
-* Differences between top 3 PLs
+* Differences between your top 3 PLs
 * Difference between a thread and a process?
 * Difference between an abstract class and an interface?
 * Internship/project experience
@@ -23,12 +23,33 @@ Interview must-dos
 
 Tell me about yourself...
 ---
+* I am currently a junior at the University of California, Santa Cruz majoring in Computer Science
+* I will be graduating in June 2019
+* I have priorly interned at Northrop Grumman Corporation as a Technical Intern, where I created a proof-of-concept visualization tool tracking health statuses of satillites
+  * It is here I became comfortable working with a large codebase, and gained exposure to object-oriented design patterns
+* I currently have a standing offer with NGC to return full-time in a software position
+* I'm interviewing with \_\_\_\_\_\_ (Microsoft, Amazon, Zillow, etc.) today because, quite frankly, I want to work with the best engineers in the world on the most exciting tech
 
+Why Microsoft?
+---
+* I want to work at Microsoft because I imagine there are an ample amount of opportunities to work on distributed systems as Microsoft scales huge data centers around the world
+  * Microsoft currently has Leslie Lamport, a pioneer in the distributed computing community, employed as a distinguished scientist
+  * I have read the following whitepapers published by MS Research
+    * *PacificA: Replication in Log-Based Distributed Systems Storage*
+    * *Replicated Data Consistency Explained Through Baseball*
+      * Uses baseball analogies to illustrate the data consistency needs of different clients
+      * Talks about Amazon S3, Dynamo, and other infrastructure/platform services being available and partition tolerant because of their needs, and Azure being strongly consistent and partition tolerant
+      * Illustrates that clients should be able to choose their desired consistency, and even simple databases may have users with diverse needs
+      * From strong consistency to eventual consistency, all consistency guarantees are useful
+* Another thing that excites me in particular is the contributions that Microsoft has made to the FOSS movement, namely TypeScript and VSCode
+  * I'm excited to see what tools and technologies that Microsoft open-sources next
 
 Questions to ask the interviewer
 ---
 * Why do you work at Microsoft?
-
+* From my short experience learning about it, I love distributed systems and computing, and I would like to work more with it. I imagine there are plenty of opportunities to work on problems pertaining to distributed systems with the Azure, Office 365, Outlook, Skype, Xbox Live, Bing, and OneDrive services. Aside from these services and the work that Microsoft Research does, what opportunities are there to work with distributed systems?
+* Microsoft has contributed to the free and open source software (FOSS) movement, namely making a big splash with TypeScript and VSCode. How much of the codebase is maintained by full-time employees at Microsoft? Are there specific departments dedicated to maintaining these projects?
+* According to Microsoft's latest 10-K (SEC filing), they name Apple and Google as their main competitors in the "software products and alternative platforms and devices" space. What is the outlook of the future in terms of staying ahead of their competitors, and what is Microsoft doing differently in terms of acquiring the best talent? As I understand, Microsoft is known amongst the software community for having a great work-life balance and company culture. Can you talk a little bit more about the company culture as well?
 
 Tools
 ---
@@ -237,3 +258,19 @@ Language Agnostic
   * Each component cannot "see" beyond the immediate layer they are interacting with
 6. Code on demand
   * Download/execute code in the form of applet/scripts
+
+### Design patterns
+##### Dependency injection
+* One object supplies the dependencies of another object
+* Intent: decouple objects so no client code has to be changed because an object it depends on needs to be changed to a different object
+* Injecting code (the injector) constructs services and calls the client to inject them
+* Three common means for client to accept a dependency injection
+  * setter-based injection
+  * interface-based injection
+  * constructor-based injection
+* Four roles
+  * *Service* object to be used
+  * *Client* object that is depending on the services it uses
+  * *Interfaces* that define how the client may use the services
+  * *Injector*, responsible for constructing the services and injecting them into the client
+* Google Guice uses annotations (`@Inject`) (see more in the Guice tutorial `guice-tutorial.pdf` in the root directory)
