@@ -34,7 +34,14 @@ Tools
 ---
 ### Docker
 ### Git
-### PostgreSQL
+* Git is a distributed VCS that allows you to track changes and revert to previous changes
+* Does not rely on central server to store all versions
+* Every developer clones a local copy of the repo (hence, making it distributed)
+* There is one central repo/Git server to commit changes
+* Commit objects contain
+  * Set of files
+  * Reference to parent commit object
+  * SHA1 name, a 40-character string that uniquely identifies the commit object
 
 Languages (similarities and differences)
 ---
@@ -50,7 +57,7 @@ Languages (similarities and differences)
    * JVM ⊂ JRE ⊂ JDK
    * Not 100% object oriented (primitve data types not objects)
    * Compile time polymorphism: method overloading
-   * Runtime polymorphism: inheritance/interface
+   * Runtime polymorphism: inheritance/interface, method overriding
    * Automatic memory management
    * Performance: Worse than C/C++
    * Syntax: Influenced by C++, generics
@@ -89,18 +96,38 @@ Languages (similarities and differences)
 * **Type system:** Strong, Static
 * **Paradigms supported:** Declarative, procedural
 * **Nuances:**
-   * 
    * Cross platform
+   * Inspired by Edgar Codd's relational model
+   * Specifically designed to query data contained in a relational database
+   * Set based, not an imperative programming language
+    * Based on relational algebra and tuple relational calculus
+   * SQL can be thought of as "sublanguages"
+    * Data query language (DQL)
+    * Data definition language (DDL) (schema creation/modification)
+    * Data control language (DCL)
+    * Data manipulation language (DML) (insert/update/delete)
+   * Procedural/object-oriented programmability available through DBMS integration with other languages
+   * SQL implementations are largely incompatible between vendors (PostgreSQL strives to stay compliant with ANSI/ISO standards)
+    * Including but not limited to: date/time syntax, string concatenation, `NULL`s, comparison case sensitivity
 
 ### CSS
-* Type system: 
-* Paradigms supported: 
-* Nuances: 
+* Style-sheet language (not Turing-complete) designed to enable separation of presentation and content
+  * Content accessibility
+  * Flexibility in specification of presentation characteristics
+  * Enable web pages to share formatting, reducing complexity
+* The same markup page can be presented in different styles for different rendering methods
+* MIME type: `text/css`
+* *Cascading* because the priority scheme in place to determine which style rule applies if there is more than one rule match
+* Aside from HTML, CSS also supports the following markup languages
+  * XHTML
+  * Vanilla XML
+  * SVG
+  * XUL
 
 ### HTML
-* Type system: 
-* Paradigms supported: 
-* Nuances: 
+* Markup language (not Turing-complete) that is the standard for creating web pages/applications
+* Describes structure of web page semantically
+* Can embed programs written in a scripting language (e.g. JavaScript) to make the page dynamic, and CSS definees the aesthetics/layout of content
 
 ### JavaScript
 * **Type system:** Dynamic, Duck
@@ -119,14 +146,57 @@ Languages (similarities and differences)
    * Uses prototypes for inheritance
    * Supports function-based implementations of Role patterns
    * Supports anonymous and variadic functions
-   * Performance: 
+   * Performance limitations due to dynamic nature, though JavaScript engines have become increasingly fast
+   * Security issues
+    * Cross-site scripting
+    * Misplaced trust in clients and developers
+    * Sandbox implementation errors
+    * Browser and plugin coding errors
+   * Uses:
+    * Client and server-side web development
+    * Embedded scripting (e.g. Chrome extensions)
+    * Application platforms (e.g. Apache Cordova, ActionScript)
+    * Scripting engines (e.g. Microsoft's Active Scripting)
 
 ### Shell
-* **Type system:**
-* **Paradigms supported:**
-* **Nuances:**
+* Different dialects
+  * Bash (Bourne Again Shell) (`bash`)
+  * Bourne shell (`sh`)
+    * Influenced by ALGOL
+  * C shell (`csh`)
+  * KornShell (`ksh`)
+  * Secure Shell (`ssh`)
+* Convenient variation of a system command––new script to act as a normal Unix command
+* Batch jobs (several commands to be executed automatically that normally would be entered one at a time)
+  * *Generalization*: using loop, control flow constructs to add more flexibility
+* *Verisimilitude*: Invocation of the interpreters for each shell dialect is handled by an operating system feature
+* Little/no support for type systems, classes, threading, complex math
+* Slower than compiled or interpreted languages
 
 ### Swift
-* **Type system:**
-* **Paradigms supported:**
+* **Type system:** Static, Strong
+* **Paradigms supported:** protocol-oriented, object-oriented, functional, imperative, block structured
 * **Nuances:**
+  * Compiled
+  * Largely influenced by Objective-C
+    * Dynamic dispatch
+    * Late binding
+    * Extensible programming (applied to types, structs, classes)
+    * Protocols, closures, and categories kept from Objective-C
+  * Syntactic sugar (contrast from Objective-C)
+  * Access control: `open`, `public`, `internal`, `fileprivate`, `private`
+    * Ignores inheritance hierarchies
+  * Option types allow for references to behave like C (e.g. a pointer may refer to a value or null)
+    * Optional chaining is offered by the language to test if the instance is nil and unwrap it if the value is non-null
+  * Does not expose pointers and unsafe accessors to programmers (in contrast to Objective-C)
+  * Pass-by-reference for objects (pointers are copied around to access the object on the heap), pass-by-value for basic types
+   * Swift allows support for both with `class` declarations (pass-by-reference) and `struct` declarations (pass-by-value)
+   * Using value types and copy-on-write for objects allow for significant performance improvements
+  * Supports *categories* (referred to as `extension`s) and *protocols* from Objective-C (interfaces)
+    * Methods are implemented through extensions, and used through generics
+    * Combination of protocols, defaults, protocol inheritance, and extensions allows functionality with classes/inheritance to be implemented on value types, leading to a dramatic performance increase
+  * Same runtime as Objective-C, and Objective-C can be used directly in Swift code
+  * Heavily influenced by C and Objective-C, but has stark differences to Objective-C as well
+  * Uses Automatic Reference Counting (ARC) to manage memory
+    * Creating a *strong reference cycle* can create memory leaks (up to the programmer to manage this with weak references)
+  * Uses: iOS, macOS, Linux, Cocoa and Cocoa Touch frameworks (to write code for Apple products)
