@@ -1,3 +1,5 @@
+# Master Study Guide
+
 Interview Questions
 ---
 * Differences between your top 3 PLs
@@ -8,8 +10,11 @@ Interview Questions
    * Describe a time where a customer asked for another feature. What did you do?
    * Describe a time where you had a project and you got stuck with a bug. What did you do?
 * What area do you want to work in?
-* Why Microsoft?
-* Explain \_\_\_\_\_\_\_\_ to a five year old.
+* Why are you passionate about tech?
+* Why \_\_\_\_\_\_\_\_? (insert name of tech company here)
+* What's the name of your favorite \_\_\_\_\_\_\_\_ (insert name of tech company here) product and why?
+  * What would you improve about it?
+* Explain \_\_\_\_\_\_\_\_ (recursion, a computer, etc.) to a five year old.
 * How would you design a vending machine?
 
 Interview must-dos
